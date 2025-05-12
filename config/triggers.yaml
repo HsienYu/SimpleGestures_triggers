@@ -1,0 +1,65 @@
+# Trigger Configuration
+# Maps detected gestures to specific actions/functions
+
+triggers:
+  # Example: When "raised_hand" gesture is detected, play a sound
+  clap:
+    type: sound
+    params:
+      sound_file: "assets/sounds/chime.mp3"
+  
+  # Example: When "pointing" gesture is detected, change visuals
+  shooting:
+    type: visual
+    params:
+      effect: "particle_burst"
+      color: [255, 0, 0]
+  
+  # Example: When "clap" gesture is detected, trigger MIDI note
+  disagree:
+    type: midi
+    params:
+      note: 60
+      velocity: 100
+      channel: 1
+
+  # Custom extension example
+  wave:
+    type: custom
+    module: "custom_triggers.light_control"
+    function: "change_lights"
+    params:
+      color: [0, 0, 255]
+      intensity: 0.8
+      
+  # OSC examples
+  point:
+    type: osc
+    params:
+      ip: "127.0.0.1"
+      port: 8000
+      address: "/gesture/point"
+      args: ["point", 1.0]
+      repeat: 1
+      
+  thumbs_up:
+    type: osc
+    params:
+      ip: "127.0.0.1"
+      port: 9000
+      address: "/gesture"
+      args: ["thumbs_up"]
+      
+  # Example with OSC bundle (multiple messages)
+  victory:
+    type: osc
+    params:
+      ip: "127.0.0.1"
+      port: 9000
+      messages:
+        - address: "/gesture/name"
+          args: ["victory"]
+        - address: "/gesture/confidence"
+          args: [0.95]
+        - address: "/gesture/action"
+          args: ["trigger", "effect"]

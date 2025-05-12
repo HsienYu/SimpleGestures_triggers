@@ -1,0 +1,27 @@
+# Gesture Trigger Configuration
+
+# Camera settings
+camera:
+  device_id: 1  # Default camera
+  width: 640
+  height: 480
+  fps: 30
+
+# Detection settings
+detection:
+  confidence_threshold: 0.7
+  use_gpu: false
+  
+# Model settings
+model:
+  model_path: 'models/gesture_model.h5'
+  input_size: [224, 224]
+  
+# Data collection
+data_collection:
+  dataset_path: 'data/gesture_dataset'
+  frames_per_gesture: 50
+  
+# Triggers
+triggers:
+  trigger_config_path: 'config/triggers.yaml'

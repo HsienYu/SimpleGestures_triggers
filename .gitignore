@@ -1,0 +1,68 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database files
+*.db
+*.sqlite3
+
+# Local development settings
+.env
+.env.local
+.env.development.local
+
+# Gesture Trigger specific
+# Datasets
+data/gesture_dataset_backup_*/
+data/gesture_dataset/*/*.npy
+data/raw_captures/
+data/processed_data/
+data/exports/
+data/training_data/
+# Models
+models/plots/*.png
+models/*.h5
+models/*.npy
+models/checkpoints/
+models/exported/
+# Assets
+assets/uploads/
+assets/sounds/*.wav
+assets/sounds/*.mp3
+assets/sounds/*.ogg
+assets/images/temp/
+assets/custom/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+temp/
