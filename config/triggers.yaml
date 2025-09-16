@@ -17,20 +17,22 @@ triggers:
   
   # Example: When "clap" gesture is detected, trigger MIDI note
   disagree:
-    type: midi
+    type: osc
     params:
-      note: 60
-      velocity: 100
-      channel: 1
+      ip: "127.0.0.1"
+      port: 9000
+      address: "/gesture"
+      args: ["disagree"]
 
   # Custom extension example
   wave:
-    type: custom
-    module: "custom_triggers.light_control"
-    function: "change_lights"
+    type: osc
     params:
-      color: [0, 0, 255]
-      intensity: 0.8
+      ip: "127.0.0.1"
+      port: 8000
+      address: "/gesture/point"
+      args: ["point", 1.0]
+      repeat: 1
       
   # OSC examples
   point:
